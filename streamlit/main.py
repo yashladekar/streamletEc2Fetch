@@ -55,3 +55,37 @@ schedule.every(1).minutes.do(job)
 while True:
     schedule.run_pending()
     time.sleep(1)
+
+# import streamlit as st
+# from streamlit_autorefresh import st_autorefresh
+# import time
+# import pandas as pd  # Example if you're working with CSV data
+
+# # Function to fetch and process the file
+# def fetch_file():
+#     # Replace this with the actual logic for fetching the file
+#     file_path = "path/to/your/backend_file.csv"  # Example: Replace with your backend file path
+#     try:
+#         # Example: Reading a CSV file
+#         data = pd.read_csv(file_path)
+#         return data
+#     except Exception as e:
+#         return f"Error loading file: {e}"
+
+# # Automatic refresh every 10 minutes (10 minutes = 600 seconds)
+# # Use `st_autorefresh` to trigger rerun without full page refresh
+# refresh_interval = 10 * 60 * 1000  # 10 minutes in milliseconds
+# st_autorefresh(interval=refresh_interval, key="data_refresh")
+
+# # Fetch the data
+# st.title("Dynamic File Analysis")
+# data = fetch_file()
+
+# # Display the data or analysis
+# if isinstance(data, pd.DataFrame):
+#     st.write("Updated Data (Every 10 minutes):")
+#     st.dataframe(data)
+# else:
+#     st.error(data)  # Show error if file loading fails
+
+# # Add any additional visualization or analysis logic here
